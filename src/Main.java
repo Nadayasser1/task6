@@ -38,12 +38,18 @@ void main() {
     students.add(student2);
     students.add(student3);
 
-    student1.addCourse(course1);
-    student1.addCourse(course2);
-    student1.addCourse(course3);
-    student1.addCourse(course4);
-    student1.addCourse(course5);
-    student1.addCourse(course6);
+    //handling
+
+    try {
+        student1.addCourse(course1);
+        student1.addCourse(course2);
+        student1.addCourse(course3);
+        student1.addCourse(course4);
+        student1.addCourse(course5);
+        student1.addCourse(course6);
+    } catch (IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+    }
 
     student2.addCourse(course1);
     student2.addCourse(course2);

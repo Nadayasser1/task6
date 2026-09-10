@@ -40,17 +40,15 @@ public class Student {
 
     // Register a course
     public void addCourse(Course course) {
-
-        // A student can register a maximum of 5 courses
         if (courses.size() < 5) {
-
             if (!courses.contains(course)) {
                 courses.add(course);
                 course.addStudent(this);
             }
-
         } else {
-            System.out.println("A student cannot register more than 5 courses.");
+            throw new IllegalArgumentException(
+                    "student can't register more than 5 courses"
+            );
         }
     }
 
